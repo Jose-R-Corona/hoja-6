@@ -17,9 +17,9 @@ public class Factory {
 
    	public  AbstractSet getClase(int entry) {
    		
-            if (entry==1) return new HashSet<Conjuntos>();
-            if (entry==2) return new TreeSet<Conjuntos>(new Comparador()); 
-            if (entry==3) return new LinkedHashSet<Conjuntos>();
+            if (entry==1) return new HashSet<programador>();
+            if (entry==2) return new TreeSet<programador>(new Comparador()); 
+            if (entry==3) return new LinkedHashSet<programador>();
             return null;
    }
 }

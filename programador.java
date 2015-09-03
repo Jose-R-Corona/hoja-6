@@ -8,11 +8,11 @@
  *
  * @author Admin
  */
-public class Conjuntos {
+public class programador {
     private String nombre;
     private boolean [] desarrollador = new boolean[3];
     
-    public Conjuntos(String nombre, boolean desarrollador0, boolean desarrollador1, boolean desarrollador2){
+    public programador(String nombre, boolean desarrollador0, boolean desarrollador1, boolean desarrollador2){
         this.nombre = nombre;
         desarrollador[0]= desarrollador0;         //Java
         desarrollador[1]= desarrollador1;         //Web
