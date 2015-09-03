@@ -1,10 +1,8 @@
 /*-----------------------------------------------------------------------
-Marlon Josue Castillo Martinez				14427
-Carlos Javier Lima Cordon					14373
-Fernando Sebastian Castillo Echeverria		14102
+Jose Corona
+Diego de Leon
 
 Algoritmos y estructura de datos
-Seccion 30
 Hoja de trabajo 6
 -------------------------------------------------------------------------*/
 
