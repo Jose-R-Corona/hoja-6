@@ -15,7 +15,6 @@ public class main {
         Scanner sc ; //scanner para leer datos
         Factory nfactory = new Factory(); //creamos el factory para definir la clase
         AbstractSet desarrollador = null; 
-<<<<<<< HEAD
         ArrayList conjunto1 = new ArrayList(); //desarrolladores java, web y celulares
         ArrayList conjunto2 = new ArrayList(); //desarrolladores java pero sin experiencia web
         ArrayList conjunto3 = new ArrayList(); //desarrolladores web y celulares pero sin  java
@@ -44,20 +43,7 @@ public class main {
         boolean java=false;
         boolean web=false;
         boolean celular=false;
-=======
-        ArrayList conjunto1 = new ArrayList(); //grupo de desarrolladores java, web y celulares
-        ArrayList conjunto2 = new ArrayList(); //grupo de desarrolladores java pero sin experiencia web
-        ArrayList conjunto3 = new ArrayList(); //grupo de desarrolladores web y celulares pero sin experiencia java
-        ArrayList conjunto4 = new ArrayList(); //grupo de desarrolladores con experiencia web o celulares pero no de java
-        String nombre="";
-        String conjunto;
-        boolean [] conjuntos = new boolean [3];
-        int cantjava;
-        int cantweb;
-        int cantcelulares;
->>>>>>> origin/master
         int opcion;
-        int opcion2;
         int menu=0;
 
         System.out.println("Benvenido:");
@@ -71,12 +57,7 @@ public class main {
             System.out.print("    Ingrese la opcion: ");
             opcion=0;
             try{opcion=sc.nextInt();} //se guardan los datos en otra variable    
-<<<<<<< HEAD
             catch(Exception e){System.out.println("Upps, ha ocurrido un error. La opcion ingresada es invalida, intentelo de nuevo\n"); opcion=0;}
-=======
-            catch(Exception e){System.out.println("Upps, ha ocurrido un error. La opcion ingresada es invalida, coloque una de las opciones indicadas\n"); opcion=0;}
-            
->>>>>>> origin/master
             if (opcion==1 || opcion==2 || opcion==3){ 
                 menu=1;
                 desarrollador = nfactory.getClase(opcion);
@@ -96,7 +77,6 @@ public class main {
             if (opcion==1)menu=2;
             if (opcion==2)menu=3; 
             if (opcion==3)menu=4;
-<<<<<<< HEAD
             //ingresamos el nombre y el grupo al que pertenecen
             
             if (menu==2){ 
@@ -152,56 +132,39 @@ public class main {
                 menu=1;
                 System.out.println("===================================================================================");
             }
-=======
-                
-        } 
-
-            //ingresamos el nombre y el grupo al que pertenecen
-        while (menu==2){ 
->>>>>>> origin/master
             
-            sc = new Scanner (System.in); //scanner para leer datos
-            System.out.print("\nIngrese el nombre: ");  
-            try{nombre=sc.next();} //se guardan los datos en otra variable    
-            catch(Exception e){System.out.println("Upps, ha ocurrido un error. La opcion ingresada es invalida, intentelo de nuevo\n");}
+            if (menu==3){
+                //Cantidad de desarrolladores por grupo
+                num_java=0;
+                num_web=0;
+                num_celulares=0;
+                contador=0;
 
-            
-            sc = new Scanner (System.in); //scanner para leer datos
-            System.out.println("\nExperiencia en desarollo de aplicaciones en JAVA: ");
-            System.out.println("    1. Si");
-            System.out.println("    2. No");
-            System.out.print("    Ingrese la opcion: ");
-            opcion=0;
-            try{opcion=sc.nextInt();} //se guardan los datos en otra variable    
-            catch(Exception e){System.out.println("Upps, ha ocurrido un error. La opcion ingresada es invalida, intentelo de nuevo\n");}
-            if (opcion==1){ conjuntos[0]=true;}
-            else conjuntos[0]=false;
+                //Se utilizan iteradores para recorrer la tabla set, en este caso la tabla se llama desarrollador
+                iter_java = desarrollador.iterator();       //Se colocan 4 iteradores para extraer los cuatro datos
+                iter_web= desarrollador.iterator();
+                iter_celular= desarrollador.iterator();
+                iter_nombre= desarrollador.iterator();
 
-            sc = new Scanner (System.in); //scanner para leer datos
-            System.out.println("\nExperiencia en desarollo de aplicaciones WEB: ");
-            System.out.println("    1. Si");
-            System.out.println("    2. No");
-            System.out.print("    Ingrese la opcion: ");
-            opcion=0;
-            try{opcion=sc.nextInt();} //se guardan los datos en otra variable    
-            catch(Exception e){System.out.println("Upps, ha ocurrido un error. La opcion ingresada es invalida, intentelo de nuevo\n");}
-            if (opcion==1){ conjuntos[1]=true;}
-            else conjuntos[1]=false;
+                //recorremos el set
+                while (iter_nombre.hasNext()) {
+                    //extraemos los valores
+                    nombre = iter_nombre.next().getNombre();
+                    java = iter_java.next().getDesarrollador(0);
+                    web = iter_web.next().getDesarrollador(1);
+                    celular = iter_celular.next().getDesarrollador(2);
 
-            sc = new Scanner (System.in); //scanner para leer datos
-            System.out.println("\nExperiencia en desarollo de aplicaciones en Celulares: ");
-            System.out.println("    1. Sí");
-            System.out.println("    2. No");
-            System.out.print("    Ingrese la opcion: ");
-            opcion=0;
-            
-            
-            try{opcion=sc.nextInt();} //se guardan los datos en otra variable    
-            catch(Exception e){System.out.println("Upps, ha ocurrido un error. La opcion ingresada es invalida, intentelo de nuevo\n");}
-            if (opcion==1){ conjuntos[2]=true;}
-            else conjuntos[2]=false;
+                    //incrementamos los contadores de cada grupo
+                    if (java==true){ num_java += 1; }
+                    if (web==true){ num_web += 1; }
+                    if (celular==true){ num_celulares += 1; }
 
-<<<<<<< HEAD
+                    //Clasificaciones segun experiencia
+                    if (java==true  && web==true && celular==true){ conjunto1.add(nombre); }        //Preugunta 1
+                    if (java==true && web==false ){ conjunto2.add(nombre); }                        //Preugunta 2
+                    if (java==false && web==true && celular==true){ conjunto3.add(nombre); }        //Preugunta 3
+                    if (java==false && (web==true || celular==true)){ conjunto4.add(nombre); }      //Preugunta 4
+
                     
                     if (java==true && web==false )contador+=1;                                      //Preugunta 5
                     if (contador != 0){mensaje="No";}else{mensaje="Si";}
@@ -260,13 +223,10 @@ public class main {
                 HashSetCel.clear();
                 myTreeSet.clear();
                 
-=======
-            Conjuntos programador = new Conjuntos (nombre, conjuntos[0],conjuntos[1], conjuntos[2]);
->>>>>>> origin/master
                 
-           }
-            
-        }
+            }
+        }      
     }
+}
 
    
