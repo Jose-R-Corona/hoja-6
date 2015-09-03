@@ -1,11 +1,9 @@
-/*-----------------------------------------------------------------------
-Jose Corona
-Diego de Leon
-
-Algoritmos y estructura de datos
-Hoja de trabajo 6
--------------------------------------------------------------------------*/
-
+/**
+ *Universidad del Valle de Guatemela
+ *Jose corona
+ *Diego de León
+ *estructura de Datos
+ */
 //importamos la clase comparator
 import java.util.Comparator;
 	public class Comparador implements Comparator<Conjuntos>{
