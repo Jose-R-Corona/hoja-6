@@ -1,22 +1,24 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+Universidad del valle de Guatemala
+Jose Corona
+Diego de León
+Estructura de datos HOJA NO.6
+*/
 
 /**
  *
  * @author Admin
  */
 public class programador {
+    // se crea la variable y el arraylist
     private String nombre;
     private boolean [] desarrollador = new boolean[3];
     
     public programador(String nombre, boolean desarrollador0, boolean desarrollador1, boolean desarrollador2){
         this.nombre = nombre;
-        desarrollador[0]= desarrollador0;         //Java
-        desarrollador[1]= desarrollador1;         //Web
-        desarrollador[2]= desarrollador2;         //Celulares
+        desarrollador[0]= desarrollador0;         // desarrolladores Java
+        desarrollador[1]= desarrollador1;         // desarrolladoresWeb
+        desarrollador[2]= desarrollador2;         // desarrolladoresCelulares
     }
     
     public boolean getDesarrollador (int x){
@@ -31,3 +33,4 @@ public class programador {
     }
     
 }
+
