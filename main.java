@@ -1,8 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+Universidad del valle de Guatemala
+Jose Corona
+Diego de León
+Estructura de datos HOJA NO.6
+*/
+
 import java.util.Scanner;
 import java.util.AbstractSet;
 import java.util.ArrayList;
@@ -45,8 +47,9 @@ public class main {
         boolean celular=false;
         int opcion;
         int menu=0;
-
-        System.out.println("Benvenido:");
+        System.out.println(" ----------");
+        System.out.println("|Bienvenido|");
+        System.out.println(" ----------");
         
         while (menu==0){    
             sc = new Scanner (System.in); //scanner para leer datos
@@ -139,7 +142,7 @@ public class main {
                 num_web=0;
                 num_celulares=0;
                 contador=0;
-
+                mensaje2="";
                 //Se utilizan iteradores para recorrer la tabla set, en este caso la tabla se llama desarrollador
                 iter_java = desarrollador.iterator();       //Se colocan 4 iteradores para extraer los cuatro datos
                 iter_web= desarrollador.iterator();
@@ -176,18 +179,18 @@ public class main {
                     if (celular==true){HashSetCel.add(nombre);}
                 }
                 
-                if ((num_java>=num_web && num_java>num_celulares)||(num_java>=num_web && num_java>=num_celulares)){ //La cantidad de programadores java es mayor
+                if ((num_java>num_web && num_java>num_celulares)||(num_java>num_web && num_java>num_celulares)){ //La cantidad de programadores java es mayor
                     myHashSet.addAll(HashSetJava); mensaje2="JAVA. Lo manejan: "; myTreeSet.addAll(HashSetJava);
                 }
-                if ((num_web>=num_java && num_web>num_celulares)||(num_web>num_java && num_web>=num_celulares)){ //La cantidad de programadores web es mayor
+                if ((num_web>num_java && num_web>num_celulares)||(num_web>num_java && num_web>num_celulares)){ //La cantidad de programadores web es mayor
                     myHashSet.addAll(HashSetWeb); mensaje2="WEB. Lo manejan: "; myTreeSet.addAll(HashSetWeb);
                 }
-                if ((num_celulares>=num_web && num_celulares>num_java)||(num_celulares>num_web && num_celulares>=num_java)){ //La cantidad de programadores celular es mayor
+                if ((num_celulares>num_web && num_celulares>num_java)||(num_celulares>num_web && num_celulares>num_java)){ //La cantidad de programadores celular es mayor
                     myHashSet.addAll(HashSetCel); mensaje2="CELULARES. Lo manejan: ";myTreeSet.addAll(HashSetCel);
                 }
                 if (num_celulares==num_web && num_celulares==num_java) mensaje="Todos los lenguajes tienen la misma cantida de desarrolladores";
-                        
-                
+                if (num_celulares==num_web) mensaje="El grupo web y de celulares tiene la misma cantidad de integrantes";
+                if( num_celulares==num_java)mensaje="El grupo java y de celulares tiene la misma cantidad de integrantes";
                 
                 menu=1;
                 //imprimimos las cantidades de cada grupo
